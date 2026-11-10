@@ -1,0 +1,16 @@
+<input type="number" id="amount" placeholder="Enter amount">
+<button id="sendBtn">Send Money</button>
+<p id="fee"></p>
+
+<script>
+  const amountInput = document.getElementById("amount");
+  const sendBtn = document.getElementById("sendBtn");
+
+  amountInput.addEventListener("input", function () {
+    document.getElementById("fee").textContent = "Estimated fee: KSh " + (this.value * 0.01);
+  });
+
+  sendBtn.addEventListener("click", function () {
+    alert("Transfer request sent.");
+  });
+</script>

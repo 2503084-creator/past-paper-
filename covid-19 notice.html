@@ -1,0 +1,17 @@
+<div id="alert-banner">COVID-19 Notice: Please wear masks and keep social distance.</div>
+
+<script>
+  const banner = document.getElementById("alert-banner");
+  const today = new Date().getDay();   // 0 = Sunday, 1 = Monday ... 6 = Saturday
+
+  // Loop through the days Monday (1) to Friday (5)
+  let showBanner = false;
+  for (let day = 1; day <= 5; day++) {
+    if (today === day) {
+      showBanner = true;
+      break;
+    }
+  }
+
+  banner.style.display = showBanner ? "block" : "none";
+</script>

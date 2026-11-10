@@ -1,0 +1,15 @@
+<script>
+  function validatePayment(meterReading, amount) {
+    if (meterReading === "" || amount === "" || meterReading == 0 || amount == 0) {
+      alert("Error: Meter reading and amount must not be empty or zero.");
+    } else if (amount > 50000) {
+      alert("Error: The amount cannot be greater than KSh 50,000.");
+    } else {
+      alert("Payment validated successfully.");
+    }
+  }
+
+  validatePayment(1250, 3000);   // valid
+  validatePayment("", 3000);     // empty reading
+  validatePayment(1250, 60000);  // exceeds limit
+</script>

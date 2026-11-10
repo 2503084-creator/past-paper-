@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Box Model</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h2 { text-align: center; }
+
+    /* Make the box model explicit: width covers content only */
+    * { box-sizing: content-box; }
+
+    /* 1. MARGIN: outer transparent space, shown with a dashed outline */
+    .margin-layer {
+      margin: 30px auto;
+      padding: 0;
+      outline: 2px dashed #f9a825;
+      outline-offset: 0;
+      width: 340px;
+    }
+
+    /* 2. BORDER: the solid line around the padding */
+    .border-layer {
+      border: 6px solid #e57373;
+    }
+
+    /* 3. PADDING: space between border and content */
+    .padding-layer {
+      background: #c8e6c9;
+      padding: 25px;
+    }
+
+    /* 4. CONTENT: the actual text, with a fixed width */
+    .content-layer {
+      background: #90caf9;
+      width: 200px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Legend */
+    .legend { width: 340px; margin: 10px auto; font-size: 14px; }
+    .legend div { display: flex; align-items: center; margin: 6px 0; }
+    .swatch { width: 18px; height: 18px; margin-right: 8px; border: 1px solid #333; }
+
+    /* Real product card */
+    .product-card {
+      width: 240px; margin: 30px auto; padding: 16px;
+      border: 2px solid #2e7d32; border-radius: 8px; background: #fff;
+    }
+    .product-card img { width: 100%; display: block; border-radius: 4px; }
+    .product-card h3 { margin: 12px 0 6px; }
+    .price { color: #2e7d32; font-weight: bold; }
+    .product-card button {
+      margin-top: 10px; padding: 8px 14px; border: none;
+      background: #2e7d32; color: #fff; border-radius: 4px; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>CSS Box Model Diagram</h2>
+
+  <div class="margin-layer">
+    <div class="border-layer">
+      <div class="padding-layer">
+        <div class="content-layer">Maize Flour 2kg<br>KSh 250</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div><span class="swatch" style="background:#f9a825;"></span>Margin: transparent space outside the border (dashed outline)</div>
+    <div><span class="swatch" style="background:#e57373;"></span>Border: the line around the box</div>
+    <div><span class="swatch" style="background:#c8e6c9;"></span>Padding: space between border and content</div>
+    <div><span class="swatch" style="background:#90caf9;"></span>Content: the text or image itself</div>
+  </div>
+
+  <h2>Product Card Example</h2>
+
+  <div class="product-card">
+    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='240'%20height='160'%3E%3Crect%20width='240'%20height='160'%20fill='%23f9a825'/%3E%3Ctext%20x='120'%20y='90'%20font-size='20'%20text-anchor='middle'%20fill='%23333'%20font-family='Arial'%3EMaize%20Flour%3C/text%3E%3C/svg%3E"
+         alt="Bag of maize flour on a yellow background">
+    <h3>Maize Flour 2kg</h3>
+    <p class="price">KSh 250</p>
+    <button>Add to Cart</button>
+  </div>
+
+</body>
+</html>
